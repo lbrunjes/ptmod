@@ -1,0 +1,4 @@
+modEntry = [[
+	Shared: lua/ptmod.lua,
+	Priority: 5
+]]

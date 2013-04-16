@@ -1,0 +1,8 @@
+name        = "ptmod"
+source_dir  = "source"
+output_dir  = "source"
+description = [=[Using scardy bob's idea
+
+]=]
+image       = "preview.jpg"
+publish_id = "850b476"

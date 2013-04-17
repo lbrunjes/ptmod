@@ -126,7 +126,7 @@ end
 
 local function CheckForNoIPs(self)
 
-    if Shared.GetTime() - self.lastTimeNoIPsMessageSent >= kSendNoIPsMessageRate then
+    /*if Shared.GetTime() - self.lastTimeNoIPsMessageSent >= kSendNoIPsMessageRate then
     
         self.lastTimeNoIPsMessageSent = Shared.GetTime()
         if Shared.GetEntitiesWithClassname("InfantryPortal"):GetSize() == 0 then
@@ -136,7 +136,7 @@ local function CheckForNoIPs(self)
             
         end
         
-    end
+    end*/
     
 end
 

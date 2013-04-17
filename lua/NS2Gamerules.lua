@@ -1271,7 +1271,7 @@ if Server then
             local team1Commander = self.team1:GetCommander()
             local team2Commander = self.team2:GetCommander()
             
-            if (team1Commander ) or Shared.GetCheatsEnabled() then
+            if (team1Commander and self.teamw:GetNumPlayers() ==1 ) or Shared.GetCheatsEnabled() then
             
                 if self:GetGameState() == kGameState.NotStarted then
                     self:SetGameState(kGameState.PreGame)
@@ -1304,7 +1304,7 @@ if Server then
             if self.timeLastGameEndCheck == nil or (Shared.GetTime() > self.timeLastGameEndCheck + kGameEndCheckInterval) then
             
                 local team1Lost = self.team1:GetHasTeamLost()
-                local team2Lost =  false --self.team2:GetHasTeamLost()
+                local team2Lost =  self.team2:GetHasTeamLost()
                 local team1Won = self.team1:GetHasTeamWon()
                 local team2Won = self.team2:GetHasTeamWon()
                 

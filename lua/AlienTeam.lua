@@ -10,7 +10,7 @@
 // ========= For more information, visit us at http://www.unknownworlds.com =====================
 
 Script.Load("lua/TechData.lua")
-Script.Load("lua/Skulk.lua")
+Script.Load("lua/Onos.lua")
 Script.Load("lua/PlayingTeam.lua")
 Script.Load("lua/UpgradeStructureManager.lua")
 
@@ -42,7 +42,7 @@ function AlienTeam:Initialize(teamName, teamNumber)
 
     PlayingTeam.Initialize(self, teamName, teamNumber)
     
-    self.respawnEntity = Skulk.kMapName
+    self.respawnEntity = Onos.kMapName
 
     // List stores all the structures owned by builder player types such as the Gorge.
     // This list stores them based on the player platform ID in order to maintain structure
@@ -243,10 +243,10 @@ end
 
 function AlienTeam:SpawnInitialStructures(techPoint)
 
-    local  hive = PlayingTeam.SpawnInitialStructures(self, techPoint)
+    //local  hive = PlayingTeam.SpawnInitialStructures(self, techPoint)
     
-    hive:SetFirstLogin()
-    hive:SetInfestationFullyGrown()
+    //hive:SetFirstLogin()
+    //hive:SetInfestationFullyGrown()
     /*
     // It is possible there was not an available tower if the map is not designed properly.
     if tower then

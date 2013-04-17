@@ -1271,7 +1271,7 @@ if Server then
             local team1Commander = self.team1:GetCommander()
             local team2Commander = self.team2:GetCommander()
             
-            if (team1Commander and self.teamw:GetNumPlayers() ==1 ) or Shared.GetCheatsEnabled() then
+            if (team1Commander and self.team2:GetNumPlayers() ==1 ) or Shared.GetCheatsEnabled() then
             
                 if self:GetGameState() == kGameState.NotStarted then
                     self:SetGameState(kGameState.PreGame)

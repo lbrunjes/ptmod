@@ -3,13 +3,8 @@ ptmod
 
 An ns2 mod for use with the ns2 dev mod jam.
 
-This currently removes the alien team. 
-
-sets medpacks to do 50 damage on pcikup
-
-and makes the marines win when they see the hive.
-
-its a race vs medpack spam to victory
+this is now an basic onos hunt mod.
+no respawns last man standing wins.
 
 http://steamcommunity.com/sharedfiles/filedetails/?id=139528791&searchtext=
 

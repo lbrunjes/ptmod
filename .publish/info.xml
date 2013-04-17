@@ -2,7 +2,7 @@
     <description>There are some marines, and an onos.&#x0A;&#x0A;Last man standing wins&#x0A;&#x0A;1:10 marines to onos ratio&#x0A;&#x0A;start with 8 res,&#x0A;&#x0A;Med packs do 10 damage to marines for reasons of legacy.</description>
     <id>139528791</id>
     <kind>Game</kind>
-    <visibility>Public</visibility>
     <build>245</build>
-    <title>pt_Hungry_onos</title>
+    <visibility>Public</visibility>
+    <title>Hungry Hungry Onos</title>
 </options>

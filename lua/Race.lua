@@ -1,5 +1,5 @@
 //
-Print("Setting Game to race")
+Print("Setting Game to hungry hungry onos")
 
 class 'Race'
 function Race:win(player)

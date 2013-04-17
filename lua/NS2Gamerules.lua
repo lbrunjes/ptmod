@@ -1086,7 +1086,8 @@ if Server then
         if  (teamNumber == self.team1:GetTeamNumber()) then
             return true
         else
-            if (team2Players ==0 )then
+        --allow one alien for every 10 marines
+            if (team2Players <=team1Players/ 10 )then
                return true
             else
                return false
@@ -1271,7 +1272,7 @@ if Server then
             local team1Commander = self.team1:GetCommander()
             local team2Commander = self.team2:GetCommander()
             
-            if (team1Commander and self.team2:GetNumPlayers() ==1 ) or Shared.GetCheatsEnabled() then
+            if (team1Commander and self.team2:GetNumPlayers() >=1 ) or Shared.GetCheatsEnabled() then
             
                 if self:GetGameState() == kGameState.NotStarted then
                     self:SetGameState(kGameState.PreGame)

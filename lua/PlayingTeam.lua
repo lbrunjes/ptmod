@@ -508,9 +508,9 @@ function PlayingTeam:GetHasTeamLost()
         local abilityToRespawn = self:GetHasAbilityToRespawn()
         local numAliveCommandStructures = self:GetNumAliveCommandStructures()
         
-        if  (not activePlayers  or
+        if  not activePlayers  or
 -- and not abilityToRespawn) or           
- (numAliveCommandStructures == 0) or
+-- (numAliveCommandStructures == 0) or
 --            (self:GetNumPlayers() == 0) or 
             self:GetHasConceded() then
             
@@ -593,15 +593,15 @@ function PlayingTeam:SpawnInitialStructures(techPoint)
     assert(techPoint ~= nil)
     
     // Spawn tower at nearest unoccupied resource point.
-    local tower = SpawnResourceTower(self, techPoint)
+    /*local tower = SpawnResourceTower(self, techPoint)
     if not tower then
         Print("Warning: Failed to spawn a resource tower for tech point in location: " .. techPoint:GetLocationName())
     end
-    
+    */
     // Spawn hive/command station at team location.
     local commandStructure = SpawnCommandStructure(techPoint, self:GetTeamNumber())
     
-    return tower, commandStructure
+    return  commandStructure
     
 end
 

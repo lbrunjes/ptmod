@@ -6,7 +6,7 @@
 //                  Max McGuire (max@unknownworlds.com)
 //
 // ========= For more information, visit us at http://www.unknownworlds.com =====================
-Script.Load("lua/Weapons/Projectile.lua")
+
 Script.Load("lua/ScriptActor.lua")
 Script.Load("lua/DropPack.lua")
 Script.Load("lua/PickupableMixin.lua")
@@ -20,7 +20,7 @@ MedPack.kMapName = "medpack"
 MedPack.kModelName = PrecacheAsset("models/marine/medpack/medpack.model")
 MedPack.kHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
 
-MedPack.kHealth = 50
+MedPack.kHealth = 10
 
 local networkVars =
 {
@@ -50,13 +50,13 @@ function MedPack:OnTouch(recipient)
          // Do damage to nearby targets.
         //local hitEntities = GetEntitiesWithMixinForTeamWithinRange("Live", GetEnemyTeamNumber(self:GetTeamNumber()), self:GetOrigin(), kGrenadeLauncherGrenadeDamageRadius)
         
-        if recipient:GetTeam():GetNumDeadPlayers() + 1 ==  recipient:GetTeam():GetNumPlayers() then
+       /* if recipient:GetTeam():GetNumDeadPlayers() + 1 ==  recipient:GetTeam():GetNumPlayers() then
             
-            NS2Gamerules:EndGame(NS2Gamerules.GetTeam2())
+            NS2Gamerules:EndGame(GetEnemyTeamNumber(recipient:GetTeamNumber()))
 
             Race:lose();
         end
-      
+      */
 
     StartSoundEffectAtOrigin(MedPack.kHealthSound, self:GetOrigin())
     

@@ -1062,19 +1062,19 @@ if Server then
     end
 
     function NS2Gamerules:GetRandomTeamNumber()
-       
+        return self.team1:GetTeamNumber()
         // Return lesser of two teams, or random one if they are the same
-        local team1Players = self.team1:GetNumPlayers()
-        local team2Players = self.team2:GetNumPlayers()
-
-        if team2Players ==0 then
-             return self.team2:GetTeamNumber()
-        else
-            return self.team1:GetTeamNumber()
-        end
-        --  
-        --return ConditionalValue(math.random() < .5, kTeam1Index, kTeam2Index)
-
+--    -    local team1Players = self.team1:GetNumPlayers()
+     --   local team2Players = self.team2:GetNumPlayers()
+        
+      --  if team1Players < team2Players then
+      --      return self.team1:GetTeamNumber()
+      --  elseif team2Players < team1Players then
+      --      return self.team2:GetTeamNumber()
+      --  end
+      --  
+      --  return ConditionalValue(math.random() < .5, kTeam1Index, kTeam2Index)
+        
     end
 
     // Enforce balanced teams
@@ -1083,14 +1083,14 @@ if Server then
         local team1Players = self.team1:GetNumPlayers()
         local team2Players = self.team2:GetNumPlayers()
         
-        if  (teamNumber == self.team1:GetTeamNumber()) then
-            return true
-        else
-            if (team2Players ==0 )then
-               return true
-            else
-               return false
-            end
+        --if (team1Players > team2Players) and (teamNumber == self.team1:GetTeamNumber()) then
+        --    return false
+        --elseif (team2Players > team1Players) and (teamNumber == self.team2:GetTeamNumber()) then
+        --    return false
+        --end
+        
+        if teamNumber == self.team2:GetTeamNumber() then
+            return false;
         end
         
         
@@ -1423,7 +1423,7 @@ if Server then
                 self.team2:PlayPrivateTeamSound(ConditionalValue(self.team2:GetTeamType() == kAlienTeamType, NS2Gamerules.kAlienStartSound, NS2Gamerules.kMarineStartSound))
                 
                 self:SetGameState(kGameState.Started)
-              
+               -- self.preventGameEnd = true
                
                 self.sponitor:OnStartMatch()
             end

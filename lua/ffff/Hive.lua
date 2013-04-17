@@ -195,10 +195,10 @@ end
 function Hive:OnCollision(entity)
 
     // We may hook this up later.
-    if entity:isa("Player") and GetEnemyTeamNumber(self:GetTeamNumber()) == entity:GetTeamNumber() then    
-       Print("Hands off that hive")
-       Race.win(entity);
-    end
+   // if entity:isa("Player") and GetEnemyTeamNumber(self:GetTeamNumber()) == entity:GetTeamNumber() then    
+   //    Print("Hands off that hive")
+   //    Race.win(entity);
+   // end
     
 end
 
@@ -349,13 +349,13 @@ function Hive:OnSighted(sighted)
 
    
     if sighted then
-    
+    /*
      Print("end the game now")
      --this line throws an error
-     self.Kill(self,self,self:GetOrigin(),  GetNormalizedVector(self:GetOrigin()))
+     -- self.Kill(self,self,self:GetOrigin(),  GetNormalizedVector(self:GetOrigin()))
      NS2Gamerules:EndGame(GetEnemyTeamNumber(self:GetTeamNumber()))
      Race.win();
-   
+   */
         local techPoint = self:GetAttached()
         if techPoint then
             techPoint:SetSmashScouted()
